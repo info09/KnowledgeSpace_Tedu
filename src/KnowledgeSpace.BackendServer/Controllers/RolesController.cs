@@ -52,7 +52,7 @@ namespace KnowledgeSpace.BackendServer.Controllers
         }
 
         [HttpGet("paging")]
-        public async Task<IActionResult> GetRoles(string filter, int pageIndex, int pageSize)
+        public async Task<IActionResult> GetRoles(string filter, int pageIndex = 1, int pageSize = 10)
         {
             var query = _roleManager.Roles;
             if (!string.IsNullOrEmpty(filter))
